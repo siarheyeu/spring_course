@@ -3,12 +3,13 @@ package aop.aspects;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+@Order(1)
+public class LoggingAspect {
 
 //    @Pointcut("execution(* aop.UniLibrary.*(..))")
 //    private void allMethodsFromUniLibrary() {
@@ -57,7 +58,7 @@ public class LoggingAndSecurityAspect {
 //        System.out.println("beforeGetAndReturnLoggingAdvice: writing Log #3");
 //    }
 
-      @Before("allGetMethods()")
+      @Before("aop.aspects.MyPointcuts.allAddMethods()")
     public void beforeGetLoggingAdvice() {
         System.out.println("beforeGetLoggingAdvice: логирование " + "попытки получить книгу/журнал");
     }
