@@ -12,8 +12,7 @@ public class UniLibrary extends AbstractLibrary {
 
     public void String returnBook(){
         System.out.println("Мы возвращаем книгу в UniLibrary");
-        System.out.println("--------------------------------------");
-        return "OK";
+        return "Война и мир";
     }
 
 
